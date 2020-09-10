@@ -1,0 +1,76 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --mainBG: #f2eecb;
+  --mainText: #333333;
+}
+body{
+  background-color: var(--mainBG);
+  /* background-color: #444444; */
+  color: var(--mainText) !important;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+}
+.gameover{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gameover > div > div{
+  max-width: 400px;
+  margin: auto;
+}
+select{
+  background-color: var(--mainBG);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  outline: none;
+}
+select:focus{
+  outline: none;
+}
+.options{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 1rem; */
+}
+.options h5{
+  cursor: pointer;
+  padding: 6px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.6);
+}
+tr{
+  width: 100% !important;
+}
+table, thead, tbody{
+  width: 100% !important;
+}
+.cap{
+  text-transform: capitalize;
+}
+.cap span{
+  font-weight: 600;
+}
+
+@media(max-width: 500px){
+ .brand-logo{
+   font-size: 1.7rem !important;
+ }
+}
