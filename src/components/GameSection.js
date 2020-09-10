@@ -21,7 +21,7 @@ const GameSection = () => {
 
     const compare = (e) => {
 
-        if (e.target.value === word.current.innerHTML) {
+        if (e.target.value.toLowerCase() === word.current.innerHTML) {
             e.target.value = ''
             matched()
             setCol(prev => prev = !prev)
@@ -32,6 +32,7 @@ const GameSection = () => {
             <div className="container">
                 <div className="section"></div>
                 <div className={classes}>
+                    <p className="center-align">Not Case Sensitive</p>
                     <div className="info">
                         {name && <p className='cap'>Player: <span>{name}</span> </p>}
                         {difficulty && <p className='cap'>Difficulty: <span>{difficulty}</span> </p>}
