@@ -32,7 +32,7 @@ const GameSection = () => {
             <div className="container">
                 <div className="section"></div>
                 <div className={classes}>
-                    <p className="center-align">Not Case Sensitive</p>
+
                     <div className="info">
                         {name && <p className='cap'>Player: <span>{name}</span> </p>}
                         {difficulty && <p className='cap'>Difficulty: <span>{difficulty}</span> </p>}
@@ -42,7 +42,7 @@ const GameSection = () => {
                         {!currentWord && 'start'}
                     </h3>
                     <div className="section"></div>
-                    <input type="text" className='center-align' ref={place} placeholder='Type Here' onChange={compare} autoFocus />
+                    <input type="text" className='center-align inp' ref={place} placeholder='Type Here' onChange={compare} autoFocus />
                     <div className="section"></div>
                     <div className="info">
                         <h6>Score: <span>{score}</span></h6>

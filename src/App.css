@@ -21,13 +21,18 @@ body{
   display: flex;
   justify-content: space-between;
 }
-.gameover{
+.gameover, .instruction{
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,8 +61,14 @@ select:focus{
   padding: 6px;
   border-bottom: 3px solid rgba(0, 0, 0, 0.6);
 }
+.inp{
+  font-size: 28px !important;
+}
 tr{
   width: 100% !important;
+}
+.listing li{
+  list-style: square !important;
 }
 table, thead, tbody{
   width: 100% !important;
@@ -68,9 +79,24 @@ table, thead, tbody{
 .cap span{
   font-weight: 600;
 }
-
+.inst{
+  width: 60%;
+  border-radius: 3px;
+}
+@media(max-width: 900px){
+  .inst{
+   width: 80%;
+ }
+ }
 @media(max-width: 500px){
  .brand-logo{
    font-size: 1.7rem !important;
  }
+ .inst{
+  width: 95%;
+}
+.optons {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 }
