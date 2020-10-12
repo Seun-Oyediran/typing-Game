@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import Header from '../components/Header'
 import Easy from '../components/Easy'
 import Medium from '../components/Medium'
@@ -7,11 +7,21 @@ import { DataContext } from '../Context'
 const HighScore = () => {
     const [current, setCurrent] = useState(0)
     const data = useContext(DataContext)
-    const { profile } = data
+    const { profile, difficulty } = data
     const hardP = profile.filter(item => item.difficulty === 'hard').sort((a, b) => (a.score < b.score ? 1 : -1))
     const mediumP = profile.filter(item => item.difficulty === 'medium').sort((a, b) => (a.score < b.score ? 1 : -1))
     const easyP = profile.filter(item => item.difficulty === 'easy').sort((a, b) => (a.score < b.score ? 1 : -1))
-
+    useEffect(() => {
+        if (difficulty === 'easy') {
+            setCurrent(prev => prev = 0)
+        }
+        if (difficulty === 'medium') {
+            setCurrent(prev => prev = 1)
+        }
+        if (difficulty === 'hard') {
+            setCurrent(prev => prev = 2)
+        }
+    }, [])
     const change = (e) => {
         if (e.target.classList.contains('easy')) {
             setCurrent(prev => prev = 0)

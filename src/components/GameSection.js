@@ -16,6 +16,7 @@ const GameSection = () => {
             clearInterval(timer)
         })
     }, [])
+
     const classes = !col ? 'card-panel transparent' : 'card-panel white'
     const word = useRef()
 
@@ -37,7 +38,7 @@ const GameSection = () => {
                         {name && <p className='cap'>Player: <span>{name}</span> </p>}
                         {difficulty && <p className='cap'>Difficulty: <span>{difficulty}</span> </p>}
                     </div>
-                    <h3 ref={word} className="center-align">
+                    <h3 ref={word} className="center-align word">
                         {currentWord}
                         {!currentWord && 'start'}
                     </h3>

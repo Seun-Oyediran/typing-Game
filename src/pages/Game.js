@@ -28,7 +28,7 @@ const Game = () => {
     return (
         <>
             <Header />
-            <GameSection />
+            {isPlaying && <GameSection />}
             {!isPlaying && <GameOver score={score} />}
 
         </>

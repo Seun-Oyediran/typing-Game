@@ -15,6 +15,8 @@ const Context = ({ children }) => {
     const [time, setTime] = useState(6)
     const [inst, setInst] = useState(true)
     const [show, setShow] = useState([0])
+    const [sars, setSars] = useState(true)
+
 
     const HIGH_SCORE_KEY = 'high_score_key'
     const SHOW_KEY = 'show key'
@@ -25,7 +27,7 @@ const Context = ({ children }) => {
         getWord()
         let check = JSON.parse(localStorage.getItem(SHOW_KEY))
         if (check) {
-            console.log(check);
+
             setShow(prev => prev = [...check])
         }
         let data = JSON.parse(localStorage.getItem(HIGH_SCORE_KEY))
@@ -47,7 +49,7 @@ const Context = ({ children }) => {
         localStorage.setItem(HIGH_SCORE_KEY, data)
     }, [profile])
     useEffect(() => {
-        console.log(show);
+
         let check = JSON.stringify(show)
         localStorage.setItem(SHOW_KEY, check)
         // setShow(show)
@@ -96,7 +98,7 @@ const Context = ({ children }) => {
 
 
     return (
-        <DataContext.Provider value={{ getName, error, currentWord, matched, score, time, isPlaying, setIsPlaying, difficulty, setTime, setScore, name, setError, profile, setCurrentWord, inst, setInst, show, setShow }}>
+        <DataContext.Provider value={{ getName, error, currentWord, matched, score, time, isPlaying, setIsPlaying, difficulty, setTime, setScore, name, setError, profile, setCurrentWord, inst, setInst, show, setShow, sars, setSars }}>
             {children}
         </DataContext.Provider>
     )
